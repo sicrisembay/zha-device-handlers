@@ -10,7 +10,6 @@ from zhaquirks.const import (
     OUTPUT_CLUSTERS,
     PROFILE_ID,
 )
-from zhaquirks.const import ELECTRICAL_MEASUREMENT_CLUSTER_ID
 
 class DCElectricalMeasurementCluster(CustomCluster, ElectricalMeasurement):
     """Custom cluster for DC voltage reporting."""
@@ -88,6 +87,14 @@ class SaikAgriDev001(CustomDevice):
                     0x0B04,  # ElectricalMeasurement
                 ],
                 OUTPUT_CLUSTERS: [],
+            },
+            242: {
+                PROFILE_ID: 0xA1E0,
+                DEVICE_TYPE: 0x0061,
+                INPUT_CLUSTERS: [],
+                OUTPUT_CLUSTERS: [
+                    0x0021,
+                ],
             }
         },
     }
@@ -108,6 +115,14 @@ class SaikAgriDev001(CustomDevice):
                     DCElectricalMeasurementCluster,
                 ],
                 OUTPUT_CLUSTERS: [],
+            },
+            242: {
+                PROFILE_ID: 0xA1E0,
+                DEVICE_TYPE: 0x0061,
+                INPUT_CLUSTERS: [],
+                OUTPUT_CLUSTERS: [
+                    0x0021,
+                ],
             }
         },
     }
